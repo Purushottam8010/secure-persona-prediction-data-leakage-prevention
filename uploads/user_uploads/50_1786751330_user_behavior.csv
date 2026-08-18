@@ -1,0 +1,11 @@
+login_hour,files_accessed,keystroke_speed,mouse_speed,persona
+9,3,70,50,Admin
+10,5,60,45,Admin
+12,2,40,30,Employee
+15,6,35,20,Outsider
+11,3,55,48,Employee
+14,7,25,15,Outsider
+8,4,65,55,Admin
+13,2,38,28,Employee
+16,5,30,18,Outsider
+10,3,58,47,Employee

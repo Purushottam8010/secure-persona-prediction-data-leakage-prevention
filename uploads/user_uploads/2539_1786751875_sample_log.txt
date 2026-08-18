@@ -1,0 +1,3 @@
+User John accessed confidential report
+User Alice entered password 1234
+User Bob viewed salary details

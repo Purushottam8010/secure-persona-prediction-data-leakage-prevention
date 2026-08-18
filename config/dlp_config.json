@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "aadhaar": "block",
+    "pan": "block",
+    "credit_card": "encrypt",
+    "ssn": "encrypt",
+    "upi_id": "warn",
+    "indian_mobile": "warn",
+    "pii_count": 3,
+    "keyword_count": 5
+  },
+  "notify_admin": true,
+  "log_violations": true,
+  "encryption_enabled": true,
+  "encryption_method": "AES-256-GCM",
+  "persona_detection_enabled": true,
+  "persona_risk_threshold": 0.7,
+  "auto_block_high_risk": true,
+  "require_mfa_high_risk": false,
+  "alert_channels": ["email", "dashboard"],
+  "retention_days": 90,
+  "compliance_frameworks": ["GDPR", "India_PDPB"],
+  "scanning": {
+    "max_file_size_mb": 200,
+    "supported_formats": [".pdf", ".docx", ".txt", ".csv", ".xlsx", ".xls"],
+    "deep_scan_enabled": true,
+    "ocr_enabled": false
+  }
+}

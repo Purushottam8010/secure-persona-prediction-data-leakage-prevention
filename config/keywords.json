@@ -1,0 +1,53 @@
+{
+  "pii": [
+    "social security",
+    "ssn",
+    "passport number",
+    "driver license",
+    "credit card",
+    "bank account",
+    "routing number",
+    "dob",
+    "date of birth",
+    "patient id",
+    "medical record",
+    "health insurance"
+  ],
+  "credentials": [
+    "password",
+    "secret",
+    "token",
+    "api_key",
+    "auth_token",
+    "bearer token",
+    "oauth",
+    "private key",
+    "ssh key",
+    "aws_key"
+  ],
+  "financial": [
+    "confidential",
+    "proprietary",
+    "trade secret",
+    "nda",
+    "non-disclosure",
+    "internal only",
+    "strictly confidential",
+    "company secret",
+    "business strategy",
+    "merger",
+    "acquisition"
+  ],
+  "threats": [
+    "exploit",
+    "malware",
+    "ransomware",
+    "trojan",
+    "virus",
+    "phishing",
+    "brute force",
+    "ddos",
+    "backdoor",
+    "rootkit"
+  ]
+}

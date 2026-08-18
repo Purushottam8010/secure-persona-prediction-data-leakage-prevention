@@ -1,0 +1,11 @@
+user_id,password_hash,mobile,role,registered_at,register_ip,register_location,locked
+
+admin01,$2b$12$D3BpV1KqFqQZtM6NYcKX5e7r9B1D1N.c0j2p/7Y2HwMpxc9Zk5qCq,Admin,0,
+emp01,$2b$12$8fD3JzQ1rVq/7hK7cD6P6u0K8iQ7q/1JfV3R7nQ7mGkQpFh0u3rCq,Employee,0,
+cust01,$2b$12$N3k7LxQ3rBfP9uL5qJ1cX9nG8bT4m/5FzG2T6rH6mKpWqHc2p8tCq,Customer,0,
+
+import bcrypt
+
+password = "admin@123".encode()
+hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+print(hashed.decode())  # copy this into CSV

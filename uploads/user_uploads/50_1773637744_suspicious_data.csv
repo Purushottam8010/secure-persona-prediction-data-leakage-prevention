@@ -1,0 +1,11 @@
+record_id,user_name,file_name,content_type,uploaded_text,risk_label
+1,rahul_k,employees.txt,credentials,"username=admin password=Admin@123",HIGH
+2,anita_p,finance.xlsx,bank_details,"Account Number: 1234567890 IFSC: SBI0000456",HIGH
+3,dev_ops,config.env,api_key,"AWS_SECRET_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE",CRITICAL
+4,student_01,notes.txt,normal_text,"Machine learning is a subset of AI",LOW
+5,hr_manager,staff.csv,pii,"Name: Ramesh Phone: 9876543210 Aadhaar: 2345-6789-1234",CRITICAL
+6,intern_22,project.docx,credentials,"DB_USER=root DB_PASS=root123",HIGH
+7,user_demo,image.png,image_data,"<binary image content>",LOW
+8,finance_lead,salary.xlsx,financial_data,"Employee Salary: 85000 Bank Acc: 9988776655",HIGH
+9,qa_test,logs.log,token,"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",HIGH
+10,admin_main,backup.sql,database_dump,"INSERT INTO users VALUES ('admin','admin@123')",CRITICAL

